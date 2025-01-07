@@ -1,4 +1,3 @@
-/* Mengatur margin dan padding dasar */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* Kontainer utama */
 body {
     background: url('/picture/background.png') no-repeat center center/cover; /* Ganti 'kereta.jpg' dengan path gambar Anda */
     height: 100vh;
@@ -23,7 +21,6 @@ body {
     width: 400px;
 }
 
-/* Form */
 .form {
     display: flex;
     flex-direction: column;

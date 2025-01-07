@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chatbot - hobi</title>
-  <link rel="stylesheet" href="css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Selamat Datang</h1>
-    </header>
-    <main>
-      <h2>Silahkan login terlebih dahulu !</h2>
-      <p>Choose to start:</p>
-      <div class="options">
-        <a href="user.html" class="pilihan kuisioner">
-          <img src="picture/kui.jpg" alt="kuisioner">
-          <p>User</p>
-        </a>
-        <a href="admin.html" class="pilihan chatbot">
-          <img src="picture/robot.jpg" alt="chatbox">
-          <p>Admin</p>
-        </a>
-      </div>
-    </main>
-  </div>
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="signup-text">Belum punya akun? <a href="/register.html">Daftar di sini</a></p>
+        </form>
+    </div>
 </body>
 </html>

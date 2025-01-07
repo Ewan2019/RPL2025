@@ -1,0 +1,73 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('/picture/wall.jpg'); /* Wallpaper */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #007f7f;
+    margin-bottom: 10px;
+  }
+  
+  main h2 {
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+  }
+  
+  main p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .pilihan {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .pilihan:hover {
+    transform: scale(1.2);
+  }
+  
+  .pilihan img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  
+  .pilihan p {
+    font-size: 1rem;
+    font-weight: bold;
+  }

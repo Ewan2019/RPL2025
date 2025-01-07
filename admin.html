@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <h2>Pendaftaran Admin</h2>
-    <form id="adminForm">
-        <input type="text" placeholder="Nama" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <input type="text" placeholder="Kunci Admin" required>
-        <button type="submit">Daftar sebagai Admin</button>
-    </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form">
+            <h1>Pendaftaran Admin</h1>
+            <div class="input-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Nama">
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="input-group">
+                <label for="admin-key">Kunci Admin</label>
+                <input type="text" id="admin-key" name="admin-key" placeholder="Kunci Admin">
+            </div>
+            <button type="submit">Daftar sebagai Admin</button>
+        </form>
+    </div>
+</body>
 </html>

@@ -1,88 +1,206 @@
+
+/* Reset dan style dasar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: url('/picture/background.png') no-repeat center center/cover; /* Ganti 'kereta.jpg' dengan path gambar Anda */
+    display: flex;
+    background-color: #f4f6f9;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login {
-    padding: 10px;
-    font-size: 16px;
+    background-color: #2c3e50;
     color: white;
-    background-color: #6a11cb;
-    border-radius: 5px;
-    border: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    margin: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .login:hover {
-    background-color: #2575fc;
-  }
+    padding: 20px 0;
+}
 
-.container {
-    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan */
+.logo {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-h1 {
-    font-size: 24px;
     text-align: center;
-    color: #333;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #34495e;
+    padding-left: 30px;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Form styles */
+.data-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-.input-group {
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
-label {
-    font-size: 14px;
-    color: #555;
-}
-
-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+.btn-update,
+.btn-reset {
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 500;
 }
 
-button:hover {
-    background-color: #0056b3;
+.btn-update {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-reset {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Table styles */
+.data-table {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-edit {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+    
+    .data-table {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 0;
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
 }

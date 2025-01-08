@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Admin</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="/css/regis-admin.css">
 </head>
 <body>
     <div class="home"> 
-        <button onclick="window.location.href='home.html'" class="login">Home</button>
+        <button onclick="window.location.href='index.html'" class="login">Home</button>
     </div>
     <div class="container">
         <form class="form">
-            <h1>Pendaftaran User</h1>
+            <h1>Pendaftaran Admin</h1>
             <div class="input-group">
                 <label for="name">Nama</label>
                 <input type="text" id="name" name="name" placeholder="Nama" required>
@@ -23,9 +23,13 @@
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
-            <button type="submit">Daftar sebagai User</button>
+            <div class="input-group">
+                <label for="admin-key">Kunci Admin</label>
+                <input type="text" id="admin-key" name="admin-key" placeholder="Kunci Admin" required>
+            </div>
+            <button type="submit">Daftar sebagai Admin</button>
         </form>
     </div>
     <footer>

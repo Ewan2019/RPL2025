@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pelacakan & Prediksi Kereta Api</title>
+    <link rel="stylesheet" href="/css/user.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="train-logo.png" alt="Logo KAI">
+            <h1>Sistem Pelacakan Kereta Api</h1>
+        </div>
+        <div class="nav-menu">
+            <a href="#" class="active">Beranda</a>
+            <a href="#">Jadwal</a>
+            <a href="#">Rute</a>
+            <a href="#">Tentang</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="search-section">
+            <h2>Cari Informasi Kereta</h2>
+            <div class="search-box">
+                <div class="search-input">
+                    <label>Stasiun Asal</label>
+                    <input type="text" placeholder="Masukkan stasiun asal">
+                </div>
+                <div class="search-input">
+                    <label>Stasiun Tujuan</label>
+                    <input type="text" placeholder="Masukkan stasiun tujuan">
+                </div>
+                <div class="search-input">
+                    <label>Tanggal</label>
+                    <input type="date">
+                </div>
+                <button class="search-btn">Cari Kereta</button>
+            </div>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="card-icon on-time"></div>
+                <div class="card-content">
+                    <h3>Tepat Waktu</h3>
+                    <p>15 Kereta</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="card-icon delayed"></div>
+                <div class="card-content">
+                    <h3>Terlambat</h3>
+                    <p>3 Kereta</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="card-icon cancelled"></div>
+                <div class="card-content">
+                    <h3>Dibatalkan</h3>
+                    <p>1 Kereta</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="train-schedule">
+            <h2>Jadwal Kereta Hari Ini</h2>
+            <div class="schedule-filter">
+                <button class="filter-btn active">Semua</button>
+                <button class="filter-btn">Tepat Waktu</button>
+                <button class="filter-btn">Terlambat</button>
+                <button class="filter-btn">Dibatalkan</button>
+            </div>
+            <div class="schedule-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. Kereta</th>
+                            <th>Nama Kereta</th>
+                            <th>Asal</th>
+                            <th>Tujuan</th>
+                            <th>Jadwal</th>
+                            <th>Status</th>
+                            <th>Prediksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="status-ontime">
+                            <td>KA-001</td>
+                            <td>Argo Bromo</td>
+                            <td>Jakarta</td>
+                            <td>Surabaya</td>
+                            <td>07:00</td>
+                            <td><span class="status on-time">Tepat Waktu</span></td>
+                            <td>Tepat Waktu</td>
+                        </tr>
+                        <tr class="status-delayed">
+                            <td>KA-002</td>
+                            <td>Argo Parahyangan</td>
+                            <td>Jakarta</td>
+                            <td>Bandung</td>
+                            <td>08:30</td>
+                            <td><span class="status delayed">Terlambat</span></td>
+                            <td>+15 menit</td>
+                        </tr>
+                        <tr class="status-cancelled">
+                            <td>KA-003</td>
+                            <td>Gajayana</td>
+                            <td>Jakarta</td>
+                            <td>Malang</td>
+                            <td>09:15</td>
+                            <td><span class="status cancelled">Dibatalkan</span></td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="route-map">
+            <h2>Peta Rute Kereta</h2>
+            <div class="map-container">
+                <!-- Placeholder untuk peta -->
+                <div class="map-placeholder">
+                    <p>Peta Rute Kereta Api</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>Email: info@kai.id</p>
+                <p>Telepon: 121</p>
+            </div>
+            <div class="footer-section">
+                <h3>Layanan Pelanggan</h3>
+                <p>24 Jam</p>
+                <p>Senin - Minggu</p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kereta Api Indonesia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

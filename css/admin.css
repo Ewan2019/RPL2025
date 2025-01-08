@@ -13,6 +13,25 @@ body {
     align-items: center;
 }
 
+.login {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #6a11cb;
+    border-radius: 5px;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login:hover {
+    background-color: #2575fc;
+  }
+
 .container {
     background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan */
     padding: 20px;

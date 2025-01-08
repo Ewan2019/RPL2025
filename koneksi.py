@@ -20,9 +20,14 @@ def indeks():
     flash('Harap Login dulu', 'danger')
     return redirect(url_for('login'))  # Benar: mengarahkan ke route 'login'
 
+@app.route('/choice_regis')
+def choice_regis():
+    return render_template('choice-regis.html')
+
+
 #registrasi  # Dekorator untuk route '/registrasi' (halaman registrasi)
-@app.route('/registrasi_user', methods=('GET','POST'))
-def registrasi_admin():
+@app.route('/regis_user', methods=('GET','POST'))
+def regis_user():
     if request.method == 'POST':  # Memeriksa apakah metode request adalah POST
         username = request.form['username']  # Mengambil username dari form
         email = request.form['email']  # Mengambil email dari form
@@ -30,15 +35,35 @@ def registrasi_admin():
 
         #cek username atau email  # Memeriksa apakah username atau email sudah ada di database
         cursor = mysql.connection.cursor()  # Membuat objek cursor untuk menjalankan query
-        cursor.execute('SELECT * FROM tb_login WHERE username=%s OR email=%s', (username, email, ))  # Menjalankan query untuk mencari username atau email
+        cursor.execute('SELECT * FROM tb_users WHERE username=%s OR email=%s', (username, email, ))  # Menjalankan query untuk mencari username atau email
         akun = cursor.fetchone()  # Mengambil data akun yang ditemukan
         if akun is None:  # Jika akun tidak ditemukan
-            cursor.execute('INSERT INTO tb_login VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
+            cursor.execute('INSERT INTO tb_users VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
             mysql.connection.commit()  # Melakukan commit perubahan ke database
             flash('Registrasi Berhasil', 'success')  # Menampilkan pesan flash 'Registrasi Berhasil' dengan kategori 'success'
         else:  # Jika akun ditemukan
             flash('Username atau email sudah ada', 'danger')  # Menampilkan pesan flash 'Username atau email sudah ada' dengan kategori 'danger'
     return render_template('regis-user.html')  # Merender template 'registrasi.html'
+
+#registrasi  # Dekorator untuk route '/registrasi' (halaman registrasi)
+@app.route('/regis_admin', methods=('GET','POST'))
+def regis_admin():
+    if request.method == 'POST':  # Memeriksa apakah metode request adalah POST
+        username = request.form['username']  # Mengambil username dari form
+        email = request.form['email']  # Mengambil email dari form
+        password = request.form['password']  # Mengambil password dari form
+
+        #cek username atau email  # Memeriksa apakah username atau email sudah ada di database
+        cursor = mysql.connection.cursor()  # Membuat objek cursor untuk menjalankan query
+        cursor.execute('SELECT * FROM tb_users WHERE username=%s OR email=%s', (username, email, ))  # Menjalankan query untuk mencari username atau email
+        akun = cursor.fetchone()  # Mengambil data akun yang ditemukan
+        if akun is None:  # Jika akun tidak ditemukan
+            cursor.execute('INSERT INTO tb_users VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
+            mysql.connection.commit()  # Melakukan commit perubahan ke database
+            flash('Registrasi Berhasil', 'success')  # Menampilkan pesan flash 'Registrasi Berhasil' dengan kategori 'success'
+        else:  # Jika akun ditemukan
+            flash('Username atau email sudah ada', 'danger')  # Menampilkan pesan flash 'Username atau email sudah ada' dengan kategori 'danger'
+    return render_template('regis-admin.html')  # Merender template 'registrasi.html'
 
 @app.route('/login', methods=['GET', 'POST'])  # Definisikan route login
 def login():

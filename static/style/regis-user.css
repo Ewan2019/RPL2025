@@ -4,9 +4,8 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
-    background: url('/picture/background.png') no-repeat center center/cover; /* Ganti 'kereta.jpg' dengan path gambar Anda */
+    background: url('/static/images/background.png') no-repeat center center/cover; /* Ganti 'kereta.jpg' dengan path gambar Anda */
     height: 100vh;
     display: flex;
     justify-content: center;

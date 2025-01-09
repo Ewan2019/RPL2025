@@ -1,1 +1,73 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style/login.css">
+</head>
+<body>
+    <div class="home">
+        <a href="{{ url_for('home') }}" class="home">Home</a>
+    </div>
+    <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label class="email" for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label class="password" for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label class="adminkey" for="adminKey">Admin Key:</label>
+            <input type="text" id="adminKey" name="adminKey" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    </div>
+
+
+    <script>
+        // Dummy data untuk simulasi akun yang valid
+        const validAccounts = [
+            { email: "koko@gmail.com", password: "koko666", adminKey: "WOW999" },
+            { email: "rose@gmail.com", password: "rose999", adminKey: "WALL666" }
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit default
+
+            // Ambil nilai input
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const adminKey = document.getElementById('adminKey').value.trim();
+
+            // Validasi input
+            if (!email || !password || !adminKey) {
+                alert('Harap isi semua field.');
+                return;
+            }
+
+            // Cek apakah akun valid
+            const isValidAccount = validAccounts.some(account => 
+                account.email === email && 
+                account.password === password && 
+                account.adminKey === adminKey
+            );
+
+            if (isValidAccount) {
+                // Jika akun valid, redirect ke admin-view
+                window.location.href = "{{ url_for('admin-view') }}";
+            } else {
+                // Jika akun tidak valid, tampilkan pesan error
+                alert('Email, password, atau admin key salah. Silakan coba lagi.');
+            }
+        });
+    </script>
+</body>
+</html>

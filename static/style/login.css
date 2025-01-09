@@ -36,7 +36,7 @@ body {
   background-color: #2575fc;
 }
 
-.login-container {
+.container {
   background: rgba(255, 255, 255, 0.8);
   padding: 30px 40px;
   border-radius: 10px;
@@ -45,59 +45,28 @@ body {
   max-width: 400px;
 }
 
-.login-form h2 {
-  text-align: center;
-  color: #333;
+h2 {
   margin-bottom: 20px;
+  color: #020202;
 }
 
-.input-group {
-  margin-bottom: 15px;
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  width: 330px;
+  margin-bottom:10px;
 }
 
-.input-group label {
-  display: block;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
+form .email {
+  margin-right: 230px;
+  margin-top: 10px
+}
+form .password {
+  margin-right: 230px;
+}
+form  {
+  margin-right: 230px;
 }
 
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  color: white;
-  background-color: #6a11cb;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #2575fc;
-}
-
-.signup-text {
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-  margin-top: 10px;
-}
-
-.signup-text a {
-  color: #6a11cb;
-  text-decoration: none;
-}
-
-.signup-text a:hover {
-  text-decoration: underline;
-}

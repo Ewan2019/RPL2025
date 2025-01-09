@@ -1,66 +1,44 @@
-/* General Styles */
+
 body {
-    font-family: Arial, sans-serif;
+    background: url('/static/images/background.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
 }
 
-h1, h2 {
+.container {
     text-align: center;
-    color: #333;
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
 }
 
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-form input, form select, form button {
-    width: 100%;
-    padding: 10px;
+h1 {
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #218838;
+    color: #000000;
 }
 
 table {
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
 table th, table td {
     padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+    border: 1px solid #000000;
 }
 
 table th {
-    background-color: #f2f2f2;
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
 }
 
 table tr:nth-child(even) {
@@ -71,15 +49,21 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
-button {
-    background-color: #dc3545;
-    color: #fff;
+.home {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #6a11cb;
+    border-radius: 5px;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 50px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #c82333;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
 }

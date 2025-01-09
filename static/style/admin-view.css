@@ -1,5 +1,7 @@
+
 /* General Styles */
 body {
+    background: url('/static/images/background.png') no-repeat center center/cover;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,8 +9,9 @@ body {
 }
 
 h1, h2 {
+    margin: 20px 0;
     text-align: center;
-    color: #333;
+    color: #fff;
 }
 
 form {
@@ -83,3 +86,18 @@ button {
 button:hover {
     background-color: #c82333;
 }
+
+.home {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #6a11cb;
+    border-radius: 5px;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }

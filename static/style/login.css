@@ -70,3 +70,18 @@ form  {
   margin-right: 230px;
 }
 
+.form-actions {
+  margin-left: 120px;
+}
+button{
+  padding: 7px;
+  width: 80px;
+  background-color: #6a11cb;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+button:hover{
+  background-color: #2575fc
+}
+

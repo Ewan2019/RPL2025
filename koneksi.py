@@ -15,10 +15,12 @@ mysql = MySQL(app)
 
 @app.route('/')
 def indeks():
-    if 'loggedin' in session:
-        return render_template('index.html')
-    flash('Harap Login dulu', 'danger')
-    return redirect(url_for('login'))  # Benar: mengarahkan ke route 'login'
+    return render_template('home.html')
+
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/choice_regis')
 def choice_regis():
@@ -35,10 +37,10 @@ def regis_user():
 
         #cek username atau email  # Memeriksa apakah username atau email sudah ada di database
         cursor = mysql.connection.cursor()  # Membuat objek cursor untuk menjalankan query
-        cursor.execute('SELECT * FROM tb_users WHERE username=%s OR email=%s', (username, email, ))  # Menjalankan query untuk mencari username atau email
+        cursor.execute('SELECT * FROM users WHERE username=%s OR email=%s', (username, email, ))  # Menjalankan query untuk mencari username atau email
         akun = cursor.fetchone()  # Mengambil data akun yang ditemukan
         if akun is None:  # Jika akun tidak ditemukan
-            cursor.execute('INSERT INTO tb_users VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
+            cursor.execute('INSERT INTO users VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
             mysql.connection.commit()  # Melakukan commit perubahan ke database
             flash('Registrasi Berhasil', 'success')  # Menampilkan pesan flash 'Registrasi Berhasil' dengan kategori 'success'
         else:  # Jika akun ditemukan
@@ -58,7 +60,7 @@ def regis_admin():
         cursor.execute('SELECT * FROM tb_users WHERE username=%s OR email=%s', (username, email, ))  # Menjalankan query untuk mencari username atau email
         akun = cursor.fetchone()  # Mengambil data akun yang ditemukan
         if akun is None:  # Jika akun tidak ditemukan
-            cursor.execute('INSERT INTO tb_users VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
+            cursor.execute('INSERT INTO users VALUES (NULL, %s, %s, %s)', (username, email, generate_password_hash(password)))  # Menjalankan query untuk memasukkan data akun baru
             mysql.connection.commit()  # Melakukan commit perubahan ke database
             flash('Registrasi Berhasil', 'success')  # Menampilkan pesan flash 'Registrasi Berhasil' dengan kategori 'success'
         else:  # Jika akun ditemukan
@@ -87,6 +89,14 @@ def login():
         finally:
             cursor.close()
     return render_template('login.html')
+
+@app.route('/user_view')
+def user_view():
+    return render_template('user-view.html')
+
+@app.route('/admin_view')
+def admin_view():
+    return render_template('admin-view.html')
 
 
 

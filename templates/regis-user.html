@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Admin</title>
+    <title>Pendaftaran User</title>
     <link rel="stylesheet" href="/static/style/regis-user.css">
 </head>
 <body>
@@ -11,11 +11,11 @@
         <button onclick="window.location.href='index.html'" class="login">Home</button>
     </div>
     <div class="container">
-        <form class="form">
+        <form class="form" method="post" >
             <h1>Pendaftaran User</h1>
             <div class="input-group">
-                <label for="name">Nama</label>
-                <input type="text" id="name" name="name" placeholder="Nama" required>
+                <label for="username">Nama</label>
+                <input type="text" id="username" name="username" placeholder="Nama" required>
             </div>
             <div class="input-group">
                 <label for="email">Email</label>

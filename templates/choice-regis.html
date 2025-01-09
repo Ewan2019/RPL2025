@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="home"> 
-    <button onclick="window.location.href='index.html'" class="login">Home</button>
+    <a href="{{ url_for('home') }}" class="login">Home</a>
 </div>
   <div class="container">
     <header>
@@ -17,10 +17,10 @@
     <main>
       <h2>Silahkan register terlebih dahulu !</h2>
       <div class="options">
-        <a href="{{ url_for('regis_user') }}" class="pilihan User">
+        <a href="{{ url_for('user_view') }}" class="pilihan User">
           <p>User</p>
         </a>
-        <a href="{{ url_for('regis_admin') }}" class="pilihan Admin">
+        <a href="{{ url_for('admin_view') }}" class="pilihan Admin">
           <p>Admin</p>
         </a>
       </div>

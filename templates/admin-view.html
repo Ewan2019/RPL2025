@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/static/style/admin-view.css">
 </head>
 <body>
-    <div class="home"> 
-        <button onclick="window.location.href='index.html'" class="home">Home</button>
+    <div class="home">
+        <a href="{{ url_for('home') }}" class="home">Home</a>
     </div>
     <h1>Admin Page</h1>
     <form id="trainForm">

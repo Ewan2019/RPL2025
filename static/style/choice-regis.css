@@ -17,7 +17,7 @@
     text-align: center;
   }
 
-  .login {
+.home {
     padding: 10px;
     font-size: 16px;
     color: white;
@@ -30,11 +30,12 @@
     margin: 50px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none;
   }
   
-  .login:hover {
-    background-color: #2575fc;
-  }
+  .home:hover {
+    background-color: #0056b3;
+}
   
   .container {
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */

@@ -62,8 +62,9 @@ table tr:hover {
     margin: 50px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none;
   }
   
-  button:hover {
+  .home:hover {
     background-color: #0056b3;
 }

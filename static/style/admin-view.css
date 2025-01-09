@@ -83,10 +83,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #c82333;
-}
-
 .home {
     padding: 10px;
     font-size: 16px;
@@ -100,4 +96,9 @@ button:hover {
     margin: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none;
   }
+
+.home:hover {
+    background-color: #2575fc;
+}
